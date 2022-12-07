@@ -2,7 +2,7 @@
 
 
 const NewTaskView = (props) => {
-  const {handleChange, handleSubmit } = props;
+  const {handleChange, handleSubmit, error } = props;
 
   return (
     <div className="root">
@@ -34,6 +34,7 @@ const NewTaskView = (props) => {
           <br/>
           <br/>
         </form>
+        {error!=="" && <p>{error}</p>}
         </div>
       </div>
     

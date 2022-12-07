@@ -15,7 +15,8 @@ class NewTaskContainer extends Component {
           location: "", 
           employeeId: null, 
           redirect: false, 
-          redirectId: null
+          redirectId: null,
+          error: ""
         };
     }
 
@@ -28,6 +29,10 @@ class NewTaskContainer extends Component {
     handleSubmit = async event => {
         event.preventDefault();
         //dont need ID because the task has not been created yet
+        if(this.state.title===""){
+          this.setState({error:"Title field is required"});
+          return;
+        }
         let task = {
             title: this.state.title,
             timeslot: this.state.timeslot,
@@ -39,7 +44,8 @@ class NewTaskContainer extends Component {
 
         this.setState({
           redirect: true, 
-          redirectId: newTask.id
+          redirectId: newTask.id,
+          error: ""
         });
     }
 
@@ -55,7 +61,8 @@ class NewTaskContainer extends Component {
         return (
           <NewTaskView 
             handleChange={this.handleChange} 
-            handleSubmit={this.handleSubmit}      
+            handleSubmit={this.handleSubmit} 
+            error={this.state.error}     
           />
         );
     }
