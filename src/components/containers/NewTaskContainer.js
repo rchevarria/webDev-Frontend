@@ -11,9 +11,9 @@ class NewTaskContainer extends Component {
         super(props);
         this.state = {
           description: "", 
-          priorityLevel: "",
+          priority: "",
           location: "", 
-          completionStatus: null, 
+          completion: null, 
           redirect: false, 
           redirectId: null,
           error: ""
@@ -35,9 +35,9 @@ class NewTaskContainer extends Component {
         }
         let task = {
             description: this.state.description,
-            priorityLevel: this.state.priorityLevel,
+            priority: this.state.priority,
             location: this.state.location,
-            completionStatus: this.state.completionStatus
+            completion: this.state.completion
         };
         
         let newTask = await this.props.addTask(task);

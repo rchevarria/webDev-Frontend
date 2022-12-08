@@ -10,8 +10,8 @@ class EditTaskContainer extends Component {
         super(props);
         this.state = {
           description: "", 
-          priorityLevel: "",
-          completionStatus: null, 
+          priority: "",
+          completion: null, 
           redirect: false, 
           redirectId: null
         };
@@ -22,8 +22,8 @@ class EditTaskContainer extends Component {
         this.props.fetchTask(this.props.match.params.id);
         this.setState({
             description: this.props.task.description, 
-            priorityLevel: this.props.task.priorityLevel,
-            completionStatus: this.props.task.completionStatus, 
+            priority: this.props.task.priority,
+            completion: this.props.task.completion, 
         });
       }
 
@@ -39,8 +39,8 @@ class EditTaskContainer extends Component {
         let task = {
             id: this.props.task.id,
             description: this.state.description,
-            priorityLevel: this.state.priorityLevel,
-            completionStatus: this.state.completionStatus
+            priority: this.state.priority,
+            completion: this.state.completion
         };
         
         this.props.editTask(task);
@@ -69,11 +69,11 @@ class EditTaskContainer extends Component {
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}> Priority level: </label>
-            <input type="text" name="priorityLevel" value={this.state.priorityLevel} onChange={(e) => this.handleChange(e)}/>
+            <input type="text" name="priority" value={this.state.priority} onChange={(e) => this.handleChange(e)}/>
             <br/>
   
             <label style={{color:'#11153e', fontWeight: 'bold'}}> Completion Status: </label>
-            <input type="text" name="completionStatus" value={this.state.completionStatus} onChange={(e) => this.handleChange(e)} />
+            <input type="text" name="completion" value={this.state.completion} onChange={(e) => this.handleChange(e)} />
             <br/>
   
             <button type="submit">
