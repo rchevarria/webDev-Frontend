@@ -5,7 +5,7 @@ import { TaskView } from "../views";
 
 class TaskContainer extends Component {
   componentDidMount() {
-    //getting Task ID from url
+    //getting task ID from url
     this.props.fetchTask(this.props.match.params.id);
   }
 

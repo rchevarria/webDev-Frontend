@@ -12,8 +12,7 @@ class NewTaskContainer extends Component {
         this.state = {
           description: "", 
           priority: "",
-          location: "", 
-          completion: null, 
+          completion: "", 
           redirect: false, 
           redirectId: null,
           error: ""
@@ -36,8 +35,7 @@ class NewTaskContainer extends Component {
         let task = {
             description: this.state.description,
             priority: this.state.priority,
-            location: this.state.location,
-            completion: this.state.completion
+            completion: this.state.completion,
         };
         
         let newTask = await this.props.addTask(task);
@@ -61,8 +59,8 @@ class NewTaskContainer extends Component {
         return (
           <NewTaskView 
             handleChange={this.handleChange} 
-            handleSubmit={this.handleSubmit} 
-            error={this.state.error}     
+            handleSubmit={this.handleSubmit}
+            error={this.state.error}      
           />
         );
     }

@@ -14,7 +14,7 @@ import {
 } from './components/containers';
 
 // if you create separate components for adding/editing 
-// a student or Employee, make sure you add routes to those
+// a student or employee, make sure you add routes to those
 // components here
 
 const App = () => {
