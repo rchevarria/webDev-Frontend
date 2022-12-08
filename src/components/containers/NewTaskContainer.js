@@ -10,10 +10,10 @@ class NewTaskContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-          title: "", 
-          timeslot: "",
+          description: "", 
+          priorityLevel: "",
           location: "", 
-          employeeId: null, 
+          completionStatus: null, 
           redirect: false, 
           redirectId: null,
           error: ""
@@ -29,15 +29,15 @@ class NewTaskContainer extends Component {
     handleSubmit = async event => {
         event.preventDefault();
         //dont need ID because the task has not been created yet
-        if(this.state.title===""){
-          this.setState({error:"Title field is required"});
+        if(this.state.description===""){
+          this.setState({error:"Description field is required"});
           return;
         }
         let task = {
-            title: this.state.title,
-            timeslot: this.state.timeslot,
+            description: this.state.description,
+            priorityLevel: this.state.priorityLevel,
             location: this.state.location,
-            employeeId: this.state.employeeId
+            completionStatus: this.state.completionStatus
         };
         
         let newTask = await this.props.addTask(task);
