@@ -12,6 +12,7 @@ class EditTaskContainer extends Component {
           description: "", 
           priority: "",
           completion: "", 
+          employeeId: null, 
           redirect: false, 
           redirectId: null
         };
@@ -24,6 +25,7 @@ class EditTaskContainer extends Component {
             description: this.props.task.description, 
             priority: this.props.task.priority,
             completion: this.props.task.completion, 
+            employeeId: this.props.course.employeeId
         });
       }
 
@@ -40,7 +42,8 @@ class EditTaskContainer extends Component {
             id: this.props.task.id,
             description: this.state.description,
             priority: this.state.priority,
-            completion: this.state.completion
+            completion: this.state.completion,
+            employeeId: this.state.employeeId
         };
         
         this.props.editTask(task);
@@ -74,6 +77,10 @@ class EditTaskContainer extends Component {
   
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Completion Status: </label>
             <input type="text" name="completion" value={this.state.completion} onChange={(e) => this.handleChange(e)} />
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>employeeId: </label>
+            <input type="text" name="employeeId" value={this.state.employeeId} onChange={(e) => this.handleChange(e)} />
             <br/>
   
             <button type="submit">
