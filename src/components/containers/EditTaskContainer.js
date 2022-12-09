@@ -25,7 +25,7 @@ class EditTaskContainer extends Component {
             description: this.props.task.description, 
             priority: this.props.task.priority,
             completion: this.props.task.completion, 
-            employeeId: this.props.course.employeeId
+            employeeId: this.props.task.employeeId,
         });
       }
 
