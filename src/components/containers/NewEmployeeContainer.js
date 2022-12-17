@@ -10,8 +10,8 @@ class NewEmployeeContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-          firstName: "", 
-          lastName: "",
+          firstname: "", 
+          lastname: "",
           department: "", 
           redirect: false, 
           redirectId: null,
@@ -28,11 +28,11 @@ class NewEmployeeContainer extends Component {
     handleSubmit = async event => {
         event.preventDefault();
         //dont need ID because the employee has not been created yet
-        if(this.state.firstName===""){
+        if(this.state.firstname===""){
           this.setState({error:"First Name field is required"});
           return;
         }
-        if(this.state.lastName===""){
+        if(this.state.lastname===""){
           this.setState({error:"Last Name field is required"});
           return;
         }
@@ -41,8 +41,8 @@ class NewEmployeeContainer extends Component {
           return;
         }
         let employee = {
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
             completion: this.state.completion,
         };
         
@@ -53,8 +53,8 @@ class NewEmployeeContainer extends Component {
           redirectId: newEmployee.id,
           error: ""
         });
-    }
 
+    }
     componentWillUnmount() {
         this.setState({redirect: false, redirectId: null});
     }
