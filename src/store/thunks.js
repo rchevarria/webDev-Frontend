@@ -16,6 +16,37 @@ export const fetchAllEmployeesThunk = () => async (dispatch) => {
   }
 };
 
+export const addEmployeeThunk = (employee) => async (dispatch) => {
+  // employee = { title: "CSCI 127" }
+  try {
+    let res = await axios.post(`${path}/employees`, employee);
+    dispatch(ac.addEmployee(res.data));
+    return res.data;
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+export const deleteEmployeeThunk = employeeId => async dispatch => {
+  try {
+    await axios.delete(`${path}/employees/${employeeId}`);
+    //delete succesful so change state with dispatch
+    dispatch(ac.deleteEmployee(employeeId));
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+export const editEmployeeThunk = employee => async dispatch => {
+  try {
+    let res = await axios.put(`${path}/employees/${employee.id}`, employee);
+    //res.data is the updated employee object
+    dispatch(ac.editEmployee(res.data));
+  } catch(err) {
+    console.error(err);
+  }
+};
+
 //Single employee
 export const fetchEmployeeThunk = (id) => async (dispatch) => {
   // thunk creator would not an be async function 
@@ -83,3 +114,5 @@ export const fetchTaskThunk = id => async dispatch => {
     console.error(err);
   }
 };
+
+

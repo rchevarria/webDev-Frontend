@@ -8,7 +8,7 @@ const NewTaskView = (props) => {
     <div className="root">
       <div className="formContainer">
         <div className="formTitle">
-          <h2 style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
+          <h2 style={{textAlign: 'center', fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
             New Task
           </h2>
         </div>
