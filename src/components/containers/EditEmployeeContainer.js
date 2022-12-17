@@ -9,10 +9,9 @@ class EditEmployeeContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-          firstName: "", 
-          priority: "",
-          completion: "", 
-          employeeId: null, 
+          firstname: "", 
+          lastname: "",
+          department: "", 
           redirect: false, 
           redirectId: null
         };
@@ -22,10 +21,9 @@ class EditEmployeeContainer extends Component {
         //getting employee ID from url
         this.props.fetchEmployee(this.props.match.params.id);
         this.setState({
-            firstName: this.props.employee.firstName, 
-            priority: this.props.employee.priority,
-            completion: this.props.employee.completion, 
-            employeeId: this.props.employee.employeeId,
+            firstname: this.props.employee.firstname, 
+            lastname: this.props.employee.lastname,
+            department: this.props.employee.department, 
         });
       }
 
@@ -40,10 +38,9 @@ class EditEmployeeContainer extends Component {
         //get new info for employee from form input
         let employee = {
             id: this.props.employee.id,
-            firstName: this.state.firstName,
-            priority: this.state.priority,
-            completion: this.state.completion,
-            employeeId: this.state.employeeId
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            department: this.state.department,
         };
         
         this.props.editEmployee(employee);
@@ -68,20 +65,17 @@ class EditEmployeeContainer extends Component {
         return (
             <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-            <input type="text" name="firstName" value={this.state.firstName} onChange ={(e) => this.handleChange(e)}/>
+            <input type="text" name="firstname" value={this.state.firstname} onChange ={(e) => this.handleChange(e)}/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Priority Level: </label>
-            <input type="text" name="priority" value={this.state.priority} onChange={(e) => this.handleChange(e)}/>
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
+            <input type="text" name="lastname" value={this.state.lastname} onChange={(e) => this.handleChange(e)}/>
             <br/>
   
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Completion Status: </label>
-            <input type="text" name="completion" value={this.state.completion} onChange={(e) => this.handleChange(e)} />
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
+            <input type="text" name="department" value={this.state.department} onChange={(e) => this.handleChange(e)} />
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>employeeId: </label>
-            <input type="text" name="employeeId" value={this.state.employeeId} onChange={(e) => this.handleChange(e)} />
-            <br/>
   
             <button type="submit">
               Submit

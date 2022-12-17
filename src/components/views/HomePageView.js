@@ -6,7 +6,7 @@ const HomePageView = () => {
     <div className='container'>
       <ul>
       <div className='header'>
-        Assignment 3
+        Final Project
       </div>
       <br/><br/><br/><br/>
       <div className='links_container'>
