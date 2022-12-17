@@ -1,3 +1,3 @@
-# final-frontend
+#Final-frontend
 
-starter code for CSCI 39548 final project
+group members: Alexandra DeJesus, Mingmar Dolma, Pramit Das, Ryan Chevarria
