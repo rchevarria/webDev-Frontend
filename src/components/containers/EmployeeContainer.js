@@ -17,11 +17,13 @@ class EmployeeContainer extends Component {
 
   render() {
     return (
-      <EmployeeView 
-        employee={this.props.employee}
-        editTask={this.props.editTask}
-        allTasks={this.props.allTasks}
-      />
+      <div className='container'>
+        <EmployeeView 
+          employee={this.props.employee}
+          editTask={this.props.editTask}
+          allTasks={this.props.allTasks}
+        />
+      </div>
     );
   }
 }

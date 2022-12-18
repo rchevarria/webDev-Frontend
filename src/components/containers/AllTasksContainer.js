@@ -15,12 +15,12 @@ class AllTasksContainer extends Component {
     }
     render(){
         return(
-            <div>
-                <AllTasksView 
-                  tasks={this.props.allTasks}
-                  deleteTask={this.props.deleteTask}   
-                />
-            </div>
+          <div className='container'>
+            <AllTasksView 
+              tasks={this.props.allTasks}
+              deleteTask={this.props.deleteTask}   
+            />
+          </div>
         )
     }
 }

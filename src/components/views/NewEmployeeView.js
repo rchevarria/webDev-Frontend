@@ -1,46 +1,33 @@
-
-
+import { BackButton, FormButton } from "../buttons";
 
 const NewEmployeeView = (props) => {
   const {handleChange, handleSubmit, error } = props;
 
   return (
-    <div className="root">
-      <div className="formContainer">
-        <div className="formTitle">
-          <h2 style={{textAlign: 'center', fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-            New Employee
-          </h2>
-        </div>
-        <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
-          <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-          <input type="text" name="firstname" onChange ={(e) => handleChange(e)} />
-          <br/>
-          <br/>
-
-          <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-          <input type="text" name="lastName" onChange={(e) => handleChange(e)} />
-          <br/>
-          <br/>
-
-          <label style={{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
-          <input type="text" name="department" onChange={(e) => handleChange(e)} />
-          <br/>
-          <br/>
-
-          <br/>
-          <br/>
-          
-          <button type="submit">
-            Submit
-          </button>
-          
-          <br/>
-          <br/>
-        </form>
-        {error!=="" && <p>{error}</p>}
-        </div>
+    <div>
+      <BackButton to={`/`}>
+        Back
+      </BackButton>
+      <div className="header">
+        New Employee
       </div>
+      <br/>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <label> First Name: </label>
+        <input type="text" name="firstname" onChange ={(e) => handleChange(e)} />
+        <br/>
+        <label> Last Name: </label>
+        <input type="text" name="lastName" onChange={(e) => handleChange(e)} />
+        <br/>
+        <label> Department: </label>
+        <input type="text" name="department" onChange={(e) => handleChange(e)} />
+        <br/>
+        <FormButton type="submit">
+          Submit
+        </FormButton>
+      </form>
+      {error!=="" && <p>{error}</p>}
+    </div>
     
   )
 }

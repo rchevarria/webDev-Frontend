@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const TaskView = (props) => {
   const { task } = props;
   return (
-    <div>
+    <div className='container'>
       <Link to={`/tasks`}>
          <button>Back</button>
       </Link>

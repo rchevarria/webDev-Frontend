@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import "../App.css";
+import { BackButton, NormButton, SmallButton } from "../buttons";
 
 const AllEmployeesView = (props) => {
   let {employees, deleteEmployee} = props;
@@ -7,19 +9,28 @@ const AllEmployeesView = (props) => {
   if (!props.allEmployees.length) {
     return (
     <div>
+      <BackButton to={`/`}>
+        Back
+      </BackButton>
+      <div className="header">
+        Employees
+      </div>
       <p>There are no Employees.</p>
-      <Link to={`/newemployee`}>
-        <button>Add New Employee</button>
-      </Link>
+      <SmallButton to={`/newemployee`}>
+        Add New Employee
+      </SmallButton>
     </div>);
 
   }
 
   return (
     <div>
-      <Link to={`/`}>
-         <button>Back</button>
-      </Link>
+      <BackButton to={`/`}>
+        Back
+      </BackButton>
+      <div className="header">
+        Employees
+      </div>
           
       {props.allEmployees.map((employee) => {
         let name = employee.firstname + " " + employee.lastname;
@@ -34,9 +45,9 @@ const AllEmployeesView = (props) => {
         );
 
       })}
-      <Link to={`/newemployee`}>
-        <button>Add New Employee</button>
-      </Link>
+      <NormButton to={`/newemployee`}>
+        Add New Employee
+      </NormButton>
     </div>
   );
 };

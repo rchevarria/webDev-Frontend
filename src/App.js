@@ -1,4 +1,4 @@
-import "./App.css";
+import "./components/App.css";
 
 //Router
 import { Switch, Route } from "react-router-dom";
@@ -14,6 +14,7 @@ import {
   NewTaskContainer,
   EditTaskContainer
 } from './components/containers';
+import Navbar from './components/navbar.js';
 
 // if you create separate components for adding/editing 
 // a student or employee, make sure you add routes to those
@@ -22,6 +23,7 @@ import {
 const App = () => {
   return (
     <div className="App">
+      <Navbar />
       <Switch>
         <Route exact path="/" component={HomePageContainer} />
         <Route exact path="/employees" component={AllEmployeesContainer} />
@@ -32,7 +34,6 @@ const App = () => {
         <Route exact path="/task/:id" component={TaskContainer} />
         <Route exact path="/newtask" component={NewTaskContainer} />
         <Route exact path="/edittask/:id" component={EditTaskContainer} />
-
       </Switch>        
     </div>
   );
