@@ -30,10 +30,11 @@ const NewEmployeeView = (props) => {
 
           <br/>
           <br/>
-
+          
           <button type="submit">
             Submit
           </button>
+          
           <br/>
           <br/>
         </form>

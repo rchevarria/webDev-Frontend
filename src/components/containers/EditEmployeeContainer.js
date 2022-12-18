@@ -64,6 +64,7 @@ class EditEmployeeContainer extends Component {
 
         return (
             <div>
+                
               <h2 style={{textAlign: 'center', fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
                 Edit Employee
               </h2>
