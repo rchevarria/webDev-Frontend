@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import { fetchEmployeeThunk, editEmployeeThunk } from '../../store/thunks';
 
@@ -64,6 +65,11 @@ class EditEmployeeContainer extends Component {
 
         return (
             <div>
+                
+             <Link to={`/employee/${this.state.redirectId}`}>
+                <button>Back</button>
+             </Link>
+                
               <h2 style={{textAlign: 'center', fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
                 Edit Employee
               </h2>

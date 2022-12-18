@@ -7,7 +7,10 @@ const EmployeeView = (props) => {
   let availableTasks = allTasks.filter(task => task.employeeId!==employee.id);
   
   return (
-    <div>      
+    <div>
+      <Link to={`/employees`}>
+        <button>Back</button>
+      </Link>
       <h1>{employee.firstname}</h1>
       <h3>{employee.department}</h3>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
@@ -36,6 +39,7 @@ const EmployeeView = (props) => {
         </div>
 
       </div>
+          
       <Link to={`/editemployee/${employee.id}`}>Edit employee information</Link>
       <br/>
       <Link to={`/employees`}>View all employees</Link>

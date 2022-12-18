@@ -4,6 +4,9 @@ const TaskView = (props) => {
   const { task } = props;
   return (
     <div>
+      <Link to={`/tasks`}>
+         <button>Back</button>
+      </Link>
       <h1>{task.description}</h1>
       {task.employee ? <h3>{task.employee.firstname + " " + task.employee.lastname}</h3>: <h3> unassigned </h3>}
     

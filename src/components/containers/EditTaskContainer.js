@@ -68,6 +68,11 @@ class EditTaskContainer extends Component {
 
         return (
             <div>
+                
+              <Link to={`/task/${this.state.redirectId}`}>
+                <button>Back</button>
+              </Link>
+                
               <h2 style={{textAlign: 'center', fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
                 Edit Task
               </h2>
