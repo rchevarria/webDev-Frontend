@@ -64,7 +64,7 @@ class EditEmployeeContainer extends Component {
         }
 
         return (
-            <div>
+            <div className='container'>
                 
              <Link to={`/employee/${this.state.redirectId}`}>
                 <button>Back</button>

@@ -57,11 +57,13 @@ class NewTaskContainer extends Component {
           return (<Redirect to={`/task/${this.state.redirectId}`}/>)
         }
         return (
-          <NewTaskView 
-            handleChange={this.handleChange} 
-            handleSubmit={this.handleSubmit}
-            error={this.state.error}      
-          />
+          <div className='container'>
+            <NewTaskView 
+              handleChange={this.handleChange} 
+              handleSubmit={this.handleSubmit}
+              error={this.state.error}      
+            />
+          </div>
         );
     }
 }

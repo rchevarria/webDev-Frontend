@@ -59,11 +59,13 @@ class NewEmployeeContainer extends Component {
           return (<Redirect to={`/employee/${this.state.redirectId}`}/>)
         }
         return (
-          <NewEmployeeView
-            handleChange={this.handleChange} 
-            handleSubmit={this.handleSubmit}
-            error={this.state.error}      
-          />
+          <div className='container'>
+            <NewEmployeeView
+              handleChange={this.handleChange} 
+              handleSubmit={this.handleSubmit}
+              error={this.state.error}      
+            />
+          </div>
         );
     }
 }

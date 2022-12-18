@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { BackButton, NormButton } from "../buttons";
+import "../App.css";
 
 const AllTasksView = (props) => {
   let {tasks, deleteTask} = props;
@@ -6,19 +8,28 @@ const AllTasksView = (props) => {
   if (!tasks.length) {
     return (
     <div>
+      <BackButton to={`/`}>
+        Back
+      </BackButton>
+      <div className="header">
+        Tasks
+      </div>
       <p>There are no tasks.</p>
-      <Link to={`/newtask`}>
-        <button>Add New Task</button>
-      </Link>
+      <NormButton to={`/newtask`}>
+        Add New Task
+      </NormButton>
     </div>
     );
   }
   
   return (
     <div>
-      <Link to={`/`}>
-          <button>Back</button>
-      </Link>
+      <BackButton to={`/`}>
+        Back
+      </BackButton>
+      <div className="header">
+        Tasks
+      </div>
           
       {tasks.map((task) => {
         let description = task.description;
@@ -32,9 +43,9 @@ const AllTasksView = (props) => {
         );
       }
       )}
-      <Link to={`/newtask`}>
-        <button>Add New Task</button>
-      </Link>
+      <NormButton to={`/newtask`}>
+        Add New Task
+      </NormButton>
     </div>
   );
 };

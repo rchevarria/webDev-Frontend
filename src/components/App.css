@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  height: 100%;
+  margin: 95px 3% 3% 3%;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.header {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  width: 100%;
+  float: left;
+}
+
+p {
+  font-size: 20px;
+}
+
+form {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+input[type="text"] {
+  font-size: 16px;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 500;
+  padding: 1px 8px;
+  margin-left: 5px;
+  border-radius: 8px;
+  border: 2px solid gray;
+  margin-bottom: 18px;
+}
+
+.links_container{
+  display: flex;
+  width: auto;
+}
+
+a:link { 
+  text-decoration: none; 
+  color: black;
+}
+
+a:visited { 
+  text-decoration: none; 
+  color: black;
+}
+
+a:active { 
+  text-decoration: none; 
+}
+

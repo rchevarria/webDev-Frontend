@@ -1,23 +1,19 @@
 import { Link } from 'react-router-dom';
+import "../App.css";
+import { NormButton } from '../buttons';
 
 
 const HomePageView = () => {
   return (
-    <div className='container'>
-      <ul>
+    <div>
       <div className='header'>
-        Final Project
+        Final Project - Ryan, Aleksandre, Pramit, Mingmar
       </div>
-      <br/><br/><br/><br/>
+      <br/><br/><br/>
       <div className='links_container'>
-        <div className='links'>
-          <Link to={'/employees'} > All Employees </Link>
-        </div>
-        <div className='links'>
-          <Link to={'/tasks'} > All Tasks </Link>
-        </div>
+        <NormButton to={'/employees'} > All Employees </NormButton>
+        <NormButton to={'/tasks'} > All Tasks </NormButton>
       </div>
-      </ul>
     </div>
   );    
 }

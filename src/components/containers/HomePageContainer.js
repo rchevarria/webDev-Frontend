@@ -2,7 +2,9 @@ import HomePageView from '../views/HomePageView';
 
 const HomePageContainer = () => {
   return (
-    <HomePageView />
+    <div className='container'>
+      <HomePageView />
+    </div>
   );
 };
 

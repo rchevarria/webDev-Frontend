@@ -11,9 +11,11 @@ class TaskContainer extends Component {
 
   render() {
     return (
-      <TaskView 
-        task={this.props.task}
-      />
+      <div className='container'>
+        <TaskView 
+          task={this.props.task}
+        />
+      </div>
     );
   }
 }

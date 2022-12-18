@@ -67,7 +67,7 @@ class EditTaskContainer extends Component {
         }
 
         return (
-            <div>
+            <div className='container'>
                 
               <Link to={`/task/${this.state.redirectId}`}>
                 <button>Back</button>
