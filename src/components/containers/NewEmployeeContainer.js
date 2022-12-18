@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import NewEmployeeView from '../views/NewEmployeeView';
 import { addEmployeeThunk } from '../../store/thunks';
@@ -58,7 +59,7 @@ class NewEmployeeContainer extends Component {
           return (<Redirect to={`/employee/${this.state.redirectId}`}/>)
         }
         return (
-          <NewEmployeeView 
+          <NewEmployeeView
             handleChange={this.handleChange} 
             handleSubmit={this.handleSubmit}
             error={this.state.error}      
