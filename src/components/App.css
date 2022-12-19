@@ -3,6 +3,7 @@
   height: 100%;
   margin: 95px 3% 3% 3%;
   font-family: 'Catamaran', sans-serif;
+  justify-content: center;
   text-align: center;
 }
 
@@ -12,6 +13,51 @@
   font-weight: 600;
   margin-bottom: 10px;
   width: 100%;
+  float: left;
+}
+
+.name {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.name:hover {
+  text-decoration: underline;
+}
+
+.inactive_name {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.department {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: -8px;
+  width: 100%;
+}
+
+.tasks {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  float: left;
+}
+
+.assigned {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
+  margin-right: 5px;
   float: left;
 }
 
@@ -38,10 +84,16 @@ input[type="text"] {
 .links_container{
   display: flex;
   width: auto;
+  justify-content: center;
 }
 
 a:link { 
   text-decoration: none; 
+  color: black;
+}
+
+a:hover { 
+  text-decoration: underline; 
   color: black;
 }
 

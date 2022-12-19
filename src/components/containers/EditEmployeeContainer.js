@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
 import { fetchEmployeeThunk, editEmployeeThunk } from '../../store/thunks';
+import { BackButton, FormButton } from '../buttons';
 
 
 class EditEmployeeContainer extends Component {
@@ -65,35 +66,29 @@ class EditEmployeeContainer extends Component {
 
         return (
             <div className='container'>
-                
-             <Link to={`/employee/${this.state.redirectId}`}>
-                <button>Back</button>
-             </Link>
-                
-              <h2 style={{textAlign: 'center', fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-                Edit Employee
-              </h2>
-              <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
-                <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-                <input type="text" name="firstname" value={this.state.firstname} onChange ={(e) => this.handleChange(e)}/>
+              <div>
+                <BackButton to={`/employee/${this.state.redirectId}`}>
+                    Back
+                </BackButton>
+                <div className='header'>
+                  Edit Employee
+                </div>
                 <br/>
-                <br/>
-
-                <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-                <input type="text" name="lastname" value={this.state.lastname} onChange={(e) => this.handleChange(e)}/>
-                <br/>
-                <br/>
-
-      
-                <label style={{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
-                <input type="text" name="department" value={this.state.department} onChange={(e) => this.handleChange(e)} />
-                <br/>
-                <br/>
-
-                <button type="submit">
-                  Submit
-                </button>
-              </form>
+                <form onSubmit={(e) => this.handleSubmit(e)}>
+                  <label> First Name: </label>
+                  <input type="text" name="firstname" value={this.state.firstname} onChange ={(e) => this.handleChange(e)}/>
+                  <br/>
+                  <label> Last Name: </label>
+                  <input type="text" name="lastname" value={this.state.lastname} onChange={(e) => this.handleChange(e)}/>
+                  <br/>
+                  <label> Department: </label>
+                  <input type="text" name="department" value={this.state.department} onChange={(e) => this.handleChange(e)} />
+                  <br/>
+                  <FormButton type="submit">
+                    Submit
+                  </FormButton>
+                </form>
+              </div>
             </div>
             
         )

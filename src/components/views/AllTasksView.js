@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BackButton, NormButton } from "../buttons";
+import { AddLink, BackButton, DeleteButton, NormButton } from "../buttons";
 import "../App.css";
 
 const AllTasksView = (props) => {
@@ -30,22 +30,26 @@ const AllTasksView = (props) => {
       <div className="header">
         Tasks
       </div>
-          
       {tasks.map((task) => {
         let description = task.description;
         return (
-          <div key={task.id}>
-          <Link to={`/task/${task.id}`}>
-            <h1>{description}</h1>
-          </Link>
-          <button onClick={() => deleteTask(task.id)}>Delete Task</button>
+          <>
+          <div className="name">
+            <div key={task.id}>
+              <Link to={`/task/${task.id}`}>
+                {description}
+              </Link>
+            </div>
           </div>
+          <DeleteButton onClick={() => deleteTask(task.id)}>Delete Task</DeleteButton>
+          </>
         );
       }
       )}
-      <NormButton to={`/newtask`}>
+      <br/>
+      <AddLink to={`/newtask`}>
         Add New Task
-      </NormButton>
+      </AddLink>
     </div>
   );
 };

@@ -5,28 +5,24 @@ const TaskView = (props) => {
   const { task } = props;
   return (
     <div >
-      <Link to={`/tasks`}>
-         <button>Back</button>
-      </Link>
-      <h1>Task: {task.description}</h1>
-      <div>
-        Assigned to: {task.employee ? <h3>{task.employee.firstname + " " + task.employee.lastname}</h3>: <h3> unassigned </h3>}
-
+      <BackButton to={`/tasks`}>
+         Back
+      </BackButton>
+      <br/><br/>
+      <div className="header">Task: {task.description}</div>
+      <div className="assigned">
+        Assigned to:
       </div>
-      {/* Assigned to: {task.employee ? <h3>{task.employee.firstname + " " + task.employee.lastname}</h3>: <h3> unassigned </h3>} */}
-    
-      <NormButton to={`/edittask/${task.id}`}>
+      <div className="tasks">
+      {task.employee ? <p>{task.employee.firstname + " " + task.employee.lastname}</p>: <p> unassigned </p>}
+      </div>
+      <SmallButton to={`/edittask/${task.id}`}>
         Edit Task Information
-      </NormButton>
-      <br/>
-      {/* <br/> */}
-
-      {/* <Link to={`/edittask/${task.id}`}>Edit task information</Link> */}
-      <br/>
-      {/* <Link to={`/tasks`}>View all tasks</Link> */}
-      <NormButton to={`/tasks`}>
+      </SmallButton>
+      <br/><br/>
+      <SmallButton to={`/tasks`}>
         View All Tasks
-      </NormButton>
+      </SmallButton>
     </div>
   );
 
