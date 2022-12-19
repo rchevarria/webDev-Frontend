@@ -5,7 +5,7 @@ const NewTaskView = (props) => {
 
   return (
     <div>
-      <BackButton to={`/`}>
+      <BackButton to={`/tasks`}>
         Back
       </BackButton>
       <div className="header">

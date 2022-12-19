@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "../App.css";
-import { AddButton, BackButton, DeleteButton, FormButton, NormButton, SmallButton } from "../buttons";
+import { AddButton, AddLink, BackButton, DeleteButton, FormButton, NormButton, SmallButton } from "../buttons";
 
 const AllEmployeesView = (props) => {
   let {employees, deleteEmployee} = props;
@@ -45,10 +45,10 @@ const AllEmployeesView = (props) => {
         );
 
       })}
-      <br/><br/>
-      <AddButton to={`/newemployee`}>
+      <br/>
+      <AddLink to={`/newemployee`}>
         Add New Employee
-      </AddButton>
+      </AddLink>
     </div>
   );
 };

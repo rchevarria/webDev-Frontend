@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import "../App.css";
-import { NormButton } from '../buttons';
+import { MainButton, NormButton } from '../buttons';
 
 
 const HomePageView = () => {
@@ -11,8 +11,8 @@ const HomePageView = () => {
       </div>
       <br/><br/><br/>
       <div className='links_container'>
-        <NormButton to={'/employees'} > All Employees </NormButton>
-        <NormButton to={'/tasks'} > All Tasks </NormButton>
+        <MainButton to={'/employees'} > All Employees </MainButton>
+        <MainButton to={'/tasks'} > All Tasks </MainButton>
       </div>
     </div>
   );    

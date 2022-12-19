@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { AddButton, BackButton, FormButton, NormButton, PlusButton, SmallButton, XButton } from "../buttons";
+import { AddButton, BackButton, FormButton, NormButton, PlusButton, SmallButton, TaskLink, XButton } from "../buttons";
 
 const EmployeeView = (props) => {
   const {employee, editTask, allTasks} = props;
@@ -12,16 +12,16 @@ const EmployeeView = (props) => {
         Back
       </BackButton>
       <br/><br/>
-      <div className="inactive_name">{employee.firstname}</div>
+      <div className="inactive_name">{employee.firstname} {employee.lastname}</div>
       <div className="department">{employee.department}</div>
-      <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
+      <div>
         <div className="tasks">Assigned tasks:
         { assignedTasks.map( task => {
           return (
             <div key={task.id}>
-              <Link to={`/task/${task.id}`}>
-                <div className="tasks">{task.description}</div>
-              </Link>
+              <TaskLink to={`/task/${task.id}`}>
+                {task.description}
+              </TaskLink>
               <XButton onClick={() => editTask({id:task.id, employeeId: null})}>x</XButton>
             </div>
           );
@@ -31,10 +31,10 @@ const EmployeeView = (props) => {
         {availableTasks.map( task => {
           return (
             <div key={task.id}>
-            <Link to={`/task/${task.id}`}>
-              <div className="tasks">{task.description}</div>
-            </Link>
-            <PlusButton onClick={() => editTask({id:task.id, employeeId: employee.id})}>+</PlusButton>
+              <TaskLink to={`/task/${task.id}`}>
+                {task.description}
+              </TaskLink>
+              <PlusButton onClick={() => editTask({id:task.id, employeeId: employee.id})}>+</PlusButton>
             </div>
           );
         })}
@@ -42,11 +42,7 @@ const EmployeeView = (props) => {
 
       </div>
           
-      <Link to={`/editemployee/${employee.id}`}>Edit employee information</Link>
-      <br/>
-      <Link to={`/employees`}>View all employees</Link>
-
-  
+      <SmallButton to={`/editemployee/${employee.id}`}>Edit employee information</SmallButton>
     </div>
   );
 
