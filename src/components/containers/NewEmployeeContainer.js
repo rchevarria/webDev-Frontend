@@ -37,7 +37,7 @@ class NewEmployeeContainer extends Component {
         let employee = {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
-            completion: this.state.completion,
+            department: this.state.department
         };
         
         let newEmployee = await this.props.addEmployee(employee);

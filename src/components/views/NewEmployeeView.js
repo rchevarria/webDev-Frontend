@@ -17,7 +17,7 @@ const NewEmployeeView = (props) => {
         <input type="text" name="firstname" onChange ={(e) => handleChange(e)} />
         <br/>
         <label> Last Name: </label>
-        <input type="text" name="lastName" onChange={(e) => handleChange(e)} />
+        <input type="text" name="lastname" onChange={(e) => handleChange(e)} />
         <br/>
         <label> Department: </label>
         <input type="text" name="department" onChange={(e) => handleChange(e)} />
