@@ -1,6 +1,26 @@
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+export const MainButton = styled(Link)`
+  font-family: Catamaran;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 10px;
+  margin-right: 10px;
+  padding: 2px 10px;
+  width: auto;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: #1c2e4a;
+    color: white;
+    border: 2px solid #1c2e4a;;
+  }
+`;
+
 export const NormButton = styled(Link)`
   font-family: Catamaran;
   font-size: 20px;
@@ -28,7 +48,6 @@ export const SmallButton = styled(Link)`
   cursor: pointer;
   border: 2px solid;
   border-radius: 10px;
-  margin-right: 10px;
   padding: 2px 10px;
   width: auto;
   text-align: center;
@@ -43,12 +62,13 @@ export const SmallButton = styled(Link)`
 
 export const FormButton = styled.button`
   font-family: Catamaran;
+  background-color: white;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
   border: 2px solid;
   border-radius: 10px;
-  margin-right: 10px;
+  margin-bottom: 15px;
   padding: 2px 10px;
   width: auto;
   text-align: center;
@@ -58,6 +78,91 @@ export const FormButton = styled.button`
     background-color: #1c2e4a;
     color: white;
     border: 2px solid #1c2e4a;;
+  }
+`;
+
+export const DeleteButton = styled.button`
+  font-family: Catamaran;
+  background-color: white;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 2px 10px;
+  width: auto;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: #FF2E2E;
+    color: white;
+    border: 2px solid #FF2E2E;
+  }
+`;
+
+export const XButton = styled.button`
+  font-family: Roboto;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 0px 7px 2px 7px;
+  width: auto;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: #FF2E2E;
+    color: white;
+    border: 2px solid #FF2E2E;
+  }
+`;
+
+export const AddButton = styled.button`
+  font-family: Catamaran;
+  background-color: white;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 2px 10px;
+  width: auto;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: #03C04A;
+    color: white;
+    border: 2px solid #03C04A;
+  }
+`;
+
+export const PlusButton = styled.button`
+  font-family: Roboto;
+  background-color: white;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 0px 6px;
+  width: auto;
+  text-align: center;
+  float: left;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: #03C04A;
+    color: white;
+    border: 2px solid #03C04A;
   }
 `;
 

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "../App.css";
-import { BackButton, NormButton, SmallButton } from "../buttons";
+import { AddButton, BackButton, DeleteButton, FormButton, NormButton, SmallButton } from "../buttons";
 
 const AllEmployeesView = (props) => {
   let {employees, deleteEmployee} = props;
@@ -37,17 +37,18 @@ const AllEmployeesView = (props) => {
         return (
           <div key={employee.id}>
           <Link to={`/employee/${employee.id}`}>
-            <h1>{name}</h1>
+            <div className="name">{name}</div>
           </Link>
-          <p>{employee.department}</p>
-          <button onClick={() => deleteEmployee(employee.id)}>Delete Employee</button>
+          <div className="department">{employee.department}</div>
+          <DeleteButton onClick={() => deleteEmployee(employee.id)}>Delete Employee</DeleteButton>
         </div>
         );
 
       })}
-      <NormButton to={`/newemployee`}>
+      <br/><br/>
+      <AddButton to={`/newemployee`}>
         Add New Employee
-      </NormButton>
+      </AddButton>
     </div>
   );
 };

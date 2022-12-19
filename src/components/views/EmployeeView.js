@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { AddButton, BackButton, FormButton, NormButton, PlusButton, SmallButton, XButton } from "../buttons";
 
 const EmployeeView = (props) => {
   const {employee, editTask, allTasks} = props;
@@ -8,31 +8,33 @@ const EmployeeView = (props) => {
   
   return (
     <div>
-      <Link to={`/employees`}>
-        <button>Back</button>
-      </Link>
-      <h1>{employee.firstname}</h1>
-      <h3>{employee.department}</h3>
+      <BackButton to={`/employees`}>
+        Back
+      </BackButton>
+      <br/><br/>
+      <div className="inactive_name">{employee.firstname}</div>
+      <div className="department">{employee.department}</div>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
-        <div>Assigned tasks:
-        {assignedTasks.map( task => {
+        <div className="tasks">Assigned tasks:
+        { assignedTasks.map( task => {
           return (
             <div key={task.id}>
-            <Link to={`/task/${task.id}`}>
-              <h4>{task.description}</h4>
-            </Link>
-            <button onClick={() => editTask({id:task.id, employeeId: null})}>x</button>
+              <Link to={`/task/${task.id}`}>
+                <div className="tasks">{task.description}</div>
+              </Link>
+              <XButton onClick={() => editTask({id:task.id, employeeId: null})}>x</XButton>
             </div>
           );
-        })}</div>
-        <div>Available tasks:
+        })}
+        </div>
+        <div className="tasks">Available tasks:
         {availableTasks.map( task => {
           return (
             <div key={task.id}>
             <Link to={`/task/${task.id}`}>
-              <h4>{task.description}</h4>
+              <div className="tasks">{task.description}</div>
             </Link>
-            <button onClick={() => editTask({id:task.id, employeeId: employee.id})}>+</button>
+            <PlusButton onClick={() => editTask({id:task.id, employeeId: employee.id})}>+</PlusButton>
             </div>
           );
         })}
