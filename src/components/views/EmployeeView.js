@@ -12,7 +12,7 @@ const EmployeeView = (props) => {
         Back
       </BackButton>
       <br/><br/>
-      <div className="inactive_name">{employee.firstname} {employee.lastname}</div>
+      <div className="inactive_name">{employee.firstname} {employee.lastname} (id: {employee.id})</div>
       <div className="department">{employee.department}</div>
       <div>
         <div className="tasks">Assigned tasks:

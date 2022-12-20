@@ -16,9 +16,9 @@ const AllEmployeesView = (props) => {
         Employees
       </div>
       <p>There are no Employees.</p>
-      <SmallButton to={`/newemployee`}>
+      <AddLink to={`/newemployee`}>
         Add New Employee
-      </SmallButton>
+      </AddLink>
     </div>);
 
   }
@@ -31,20 +31,20 @@ const AllEmployeesView = (props) => {
       <div className="header">
         Employees
       </div>
-          
+      
       {props.allEmployees.map((employee) => {
         let name = employee.firstname + " " + employee.lastname;
         return (
-          <div key={employee.id}>
-          <Link to={`/employee/${employee.id}`}>
-            <div className="name">{name}</div>
-          </Link>
-          <div className="department">{employee.department}</div>
-          <DeleteButton onClick={() => deleteEmployee(employee.id)}>Delete Employee</DeleteButton>
-        </div>
+            <div key={employee.id}>
+            <Link to={`/employee/${employee.id}`}>
+              <div className="name">{name} (id: {employee.id})</div>
+            </Link>
+            <div className="department">{employee.department}</div>
+            <DeleteButton onClick={() => deleteEmployee(employee.id)}>Delete Employee</DeleteButton>
+            </div>
         );
 
-      })}
+      })}  
       <br/>
       <AddLink to={`/newemployee`}>
         Add New Employee
