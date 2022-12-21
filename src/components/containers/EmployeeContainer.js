@@ -43,6 +43,8 @@ const mapDispatch = (dispatch) => {
     fetchEmployee: (id) => dispatch(fetchEmployeeThunk(id)),
     editTask: (task) => dispatch(editTaskThunk(task)),
     fetchTasks: () => dispatch(fetchAllTasksThunk()),
+    deleteEmployee: (employeeId) => dispatch(deleteEmployeeThunk(employeeId)),
+
 
   };
 };
