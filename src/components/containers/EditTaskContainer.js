@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom';
 
 import { fetchTaskThunk, editTaskThunk } from '../../store/thunks';
 import { Link } from "react-router-dom";
+import { BackButton, FormButton } from '../buttons';
+
 
 
 class EditTaskContainer extends Component {
@@ -68,41 +70,37 @@ class EditTaskContainer extends Component {
 
         return (
             <div className='container'>
-                
-              <Link to={`/task/${this.state.redirectId}`}>
-                <button>Back</button>
-              </Link>
-                
-              <h2 style={{textAlign: 'center', fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
+              <div>  
+              <BackButton to={`/task/${this.state.redirectId}`}>
+                Back
+              </BackButton>
+              <div className='header'>
                 Edit Task
-              </h2>
-              <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
-              <label style= {{color:'#11153e', fontWeight: 'bold'}}>Description: </label>
-              <input type="text" name="description" value={this.state.description} onChange ={(e) => this.handleChange(e)}/>
-              <br/>
-              <br/>
+              </div>
+              <br/>  
+              <form onSubmit={(e) => this.handleSubmit(e)}>
+                  <label>Description: </label>
+                  <input type="text" name="description" value={this.state.description} onChange ={(e) => this.handleChange(e)}/>
+                  <br/>
+                  
+		              <label>Priority Level: </label>
+                  <input type="text" name="priority" value={this.state.priority} onChange={(e) => this.handleChange(e)}/>
+                  <br/>
+                  
+		              <label>Completion Status: </label>
+                  <input type="text" name="completion" value={this.state.completion} onChange={(e) => this.handleChange(e)} />
+                  <br/>
+			
+		              <label>employeeId: </label>
+		              <input type="text" name="employeeId" value={this.state.employeeId} onChange={(e) => this.handleChange(e)} />
+                  <br/>
 
-              <label style={{color:'#11153e', fontWeight: 'bold'}}>Priority Level: </label>
-              <input type="text" name="priority" value={this.state.priority} onChange={(e) => this.handleChange(e)}/>
-              <br/>
-              <br/>
-    
-              <label style={{color:'#11153e', fontWeight: 'bold'}}>Completion Status: </label>
-              <input type="text" name="completion" value={this.state.completion} onChange={(e) => this.handleChange(e)} />
-              <br/>
-              <br/>
-
-              <label style={{color:'#11153e', fontWeight: 'bold'}}>employeeId: </label>
-              <input type="text" name="employeeId" value={this.state.employeeId} onChange={(e) => this.handleChange(e)} />
-              <br/>
-              <br/>
-
-              <button type="submit">
+              <FormButton type="submit">
                 Submit
-              </button>
+              </FormButton>
 
               </form>
-              
+              </div>
             </div>
             
         )
