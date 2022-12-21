@@ -43,7 +43,6 @@ const EmployeeView = (props) => {
       </div>
           
       <SmallButton to={`/editemployee/${employee.id}`}>Edit employee information</SmallButton>
-      <DeleteButton onClick={() => deleteEmployee(employee.id)}>Delete Employee</DeleteButton>
     </div>
   );
 

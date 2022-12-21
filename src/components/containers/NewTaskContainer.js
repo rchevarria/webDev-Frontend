@@ -33,6 +33,14 @@ class NewTaskContainer extends Component {
           this.setState({error:"Description field is required"});
           return;
         }
+        else if(this.state.priority===""){
+          this.setState({error:"Priority field is required"});
+          return;
+        }
+        else if(this.state.completion===""){
+          this.setState({error:"Completion Status field is required"});
+          return;
+        }
         let task = {
             description: this.state.description,
             priority: this.state.priority,
