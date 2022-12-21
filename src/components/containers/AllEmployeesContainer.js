@@ -38,7 +38,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchAllEmployees: () => dispatch(fetchAllEmployeesThunk()),
-    deleteEmployee: (employeeId) => dispatch(deleteEmployeeThunk(employeeId)),
+    deleteEmployee: () => dispatch(deleteEmployeeThunk()),
 
   };
 };
