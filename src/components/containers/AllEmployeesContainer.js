@@ -37,7 +37,7 @@ const mapState = (state) => {
 // Map dispatch to props;
 const mapDispatch = (dispatch) => {
   return {
-    fetchAllEmployees: (employeeId) => dispatch(fetchAllEmployeesThunk(employeeId)),
+    fetchAllEmployees: () => dispatch(fetchAllEmployeesThunk()),
     deleteEmployee: (employeeId) => dispatch(deleteEmployeeThunk(employeeId)),
 
   };
